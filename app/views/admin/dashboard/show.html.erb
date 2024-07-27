@@ -1,2 +1,17 @@
-<h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+<section class="admin-dashboard">
+
+  <header class="page-header">
+    <h1>Admin Dashboard</h1>
+  </header>
+
+  <div class="dashboard-summary jumbotron">
+    <h4>Store Statistics</h4>
+    <p>
+      <%= link_to "Products: #{@product_count}", admin_products_path, class: 'btn btn-info' %>
+    </p>
+    <p>
+      <%= link_to "Categories: #{@category_count}", admin_categories_path, class: 'btn btn-info' %>
+    </p>
+  </div>
+
+</section>
