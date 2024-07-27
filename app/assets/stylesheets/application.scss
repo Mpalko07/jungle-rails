@@ -111,3 +111,14 @@ form.button_to {
 .text-danger {
   color: #f38792 !important;
 }
+
+.sold-out {
+  width: 140px;
+  font-size: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  background-color: red;
+  border: 1px solid red;
+  color: white;
+  border-radius: 0.25rem;
+}
