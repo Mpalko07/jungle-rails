@@ -3,12 +3,19 @@
     <%= image_tag product.image.thumb.url, alt: product.name %>
     <h1>
       <span><%= product.name %></span>
-      <span><%= number_to_currency(product.price, unit: "$", precision: 2) %></span>
+      <span><%= humanized_money_with_symbol product.price %></span>
     </h1>
   <% end %>
-  <div>
-    <%= button_to add_item_cart_path(product_id: product.id), class: 'btn', method: :post do %>
-      <%= fa_icon "shopping-cart", text: 'Add' %>
+  <div class="product-actions">
+    <% if product.quantity.to_i > 0 %>
+      <%= button_to add_item_cart_path(product_id: product.id), class: 'btn', method: :post do %>
+        <%= fa_icon "shopping-cart", text: 'Add' %>
+      <% end %>
+    <% else %>
+      <span class="sold-out">Sold Out</span>
+      <button class="btn disabled" disabled>
+        <%= fa_icon "shopping-cart", text: 'Add' %>
+      </button>
     <% end %>
   </div>
 </article>
